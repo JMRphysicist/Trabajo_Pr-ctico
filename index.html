@@ -1,0 +1,299 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div id="app"></div>
+
+<title>La España vaciada</title>
+<h1> La España vaciada </h1>
+<h2> El problema de la despoblación y el envejecimiento poblacional </h2>
+<p><strong>Autor:</strong> José Manuel Romero González <br>
+<span style="white-space: nowrap;">
+<strong>Url:</strong> <a href="https://js-7w1lvt.stackblitz.io/">https://js-7w1lvt.stackblitz.io</a>
+</span>
+<br>
+<span style="white-space: nowrap;">
+<strong>GitHub:</strong> <a href="https://github.com/JMRphysicist/08MBID---Visualizacion-de-Datos.git">https://github.com/JMRphysicist/08MBID---Visualizacion-de-Datos.git</a>
+</span>
+</p>
+
+
+<h2> Introducción </h2><br>
+El envejecimiento de la población y la desocupación en las zonas rurales son dos de los desafíos más importantes que enfrenta nuestra sociedad hoy en día. El envejecimiento de la población es un fenómeno mundial que se debe principalmente al aumento de la esperanza de vida y a la disminución de las tasas de natalidad. Este fenómeno tiene importantes implicaciones para la economía, la salud y el bienestar social, y se espera que tenga un impacto cada vez mayor en los próximos años. Por otro lado, la desocupación en las zonas rurales es un problema que afecta a muchas comunidades en todo el mundo. La falta de oportunidades de empleo y la emigración de los jóvenes hacia las ciudades han dejado a las zonas rurales con poblaciones envejecidas y empobrecidas, lo que ha llevado a un declive económico y social. <br><br>
+
+Si se estudia la evolución de la población empadronada en el rango de [25-39] años en los últimos años:<br><br>
+
+<table>
+<thead>
+  <tr>
+    <th>Año</th>
+    <th>Total</th>
+    <th>Total jóvenes</th>
+    <th>Variación total</th>
+    <th>Variación jóvenes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>2022</td>
+    <td>47.475.420</td>
+    <td>8.409.902</td>
+    <td>90.313</td>
+    <td>-175.686</td>
+  </tr>
+  <tr>
+    <td>2021</td>
+    <td>47.385.107</td>
+    <td>8.585.588</td>
+    <td>-65.688</td>
+    <td>-228.788</td>
+  </tr>
+  <tr>
+    <td>2020</td>
+    <td>47.450.795</td>
+    <td>8.814.376</td>
+    <td>424.587</td>
+    <td>-104.975</td>
+  </tr>
+  <tr>
+    <td>2019</td>
+    <td>47.026.208</td>
+    <td>8.919.351</td>
+    <td>303.228</td>
+    <td>-171.629</td>
+  </tr>
+  <tr>
+    <td>2018</td>
+    <td>46.722.980</td>
+    <td>9.090.980</td>
+    <td>150.848</td>
+    <td>-244.121</td>
+  </tr>
+  <tr>
+    <td>2017</td>
+    <td>46.572.132</td>
+    <td>9.335.101</td>
+    <td>15.124</td>
+    <td>-324.569</td>
+  </tr>
+  <tr>
+    <td>2016</td>
+    <td>46.557.008</td>
+    <td>9.659.670</td>
+    <td>-67.374</td>
+    <td>-354.002</td>
+  </tr>
+  <tr>
+    <td>2015</td>
+    <td>46.624.382</td>
+    <td>10.013.672</td>
+    <td>-146.959</td>
+    <td>-393.151</td>
+  </tr>
+  <tr>
+    <td>2014</td>
+    <td>46.771.341</td>
+    <td>10.406.823</td>
+    <td>-358.442</td>
+    <td>-417.870</td>
+  </tr>
+  <tr>
+    <td>2013</td>
+    <td>47.129.783</td>
+    <td>10.824.693</td>
+    <td>-135.538</td>
+    <td>-351.261</td>
+    </tr>
+    <tr>
+    <td>2012</td>
+    <td>47.265.321</td>
+    <td>11.175.954</td>
+    <td>74.828</td>
+    <td>-253.518</td>
+    </tr>
+    <tr>
+    <td>2011</td>
+    <td>47.190.493</td>
+    <td>11.429.472</td>
+    <td>169.462</td>
+    <td>-204.655</td>
+    </tr>
+      </tbody>
+      </tfoot>
+    </table><br><br>
+    <strong>Datos extraidos del Instituto Nacional de Estadística (INE).</strong>
+
+    <iframe width="726" height="449" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSidm7XdrEXsRihB-Cv4IkIw61zUML3BTN0PbTfovKqm-J6MfstwAa57LoiiP8Rf3l6VfwL7KM_fARw/pubchart?oid=909219272&amp;format=interactive"></iframe><br><br>
+
+    
+    Se selecciona este rango de edades, porque se considera que este rango identifica mejor a las personas en búsqueda activa de empleo. Las personas de 25 a 39 años son una parte importante de la fuerza laboral y pueden contribuir significativamente al crecimiento económico del país debido a su experiencia y habilidades. Además, son un grupo demográfico importante para el consumo y el gasto, lo que puede impulsar la economía. Al estar en su etapa reproductiva, son importantes para la tasa de natalidad del país y pueden ser beneficiosos para la economía a largo plazo. También son importantes para la participación política y cívica en el país, ya que pueden tener una mayor influencia en las decisiones políticas y en la dirección futura del país debido a la etapa en la que se encuentran construyendo sus carreras y estableciendo sus vidas.<br><br>
+
+    Como se puede apreciar, en el gráfico, la proporción de la población comprendida en ese rango se ha reducido en un 6.5% en tan solo 10 años. <br><br>
+
+    Se se hace una estimación de la proporción mediante una regresión polinómica de segundo orden, se encuentra que para 2028 la proporción podría descender hasta un 16.9% , no obstante, esta es una estimación imprecisa, ya que el censo poblacional puede verse influenciado por diversos factores. <br><br>
+
+    Si vemos la densidad de población por provincias de españa, se evidencia que las zonas rurales están muy poco pobladas en comparación a las provincias mas industriales o turisticas. La despoblación de las zonas rurales representa un problema para el país debido a la pérdida de recursos humanos y la disminución de la producción económica en estas áreas. Además, el éxodo rural puede generar un aumento en la concentración urbana y la sobrepoblación de las ciudades, lo que puede desencadenar problemas de infraestructura, desempleo, violencia y pobreza. Además, la despoblación rural también puede tener un impacto negativo en la conservación del medio ambiente y el patrimonio cultural y la tradición de las comunidades rurales. Por lo tanto, es importante fomentar políticas y programas que promuevan el desarrollo sostenible y la calidad de vida en las zonas rurales para evitar su despoblación.<br><br>
+
+ 
+    <iframe title="Densidad de población por provincias" aria-label="Mapa" id="datawrapper-chart-rOz9i" src="https://datawrapper.dwcdn.net/rOz9i/" scrolling="no" frameborder="0" style="width: 0; min-width: 40% !important; border: none;" height="502" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+    </script><br><br>-->
+
+ <!--
+  <iframe title="Densidad de población por provincias " aria-label="Mapa" id="datawrapper-chart-rOz9i" scrolling="no" frameborder="0" style="border: none;" width="10" height="0"></iframe>
+  <img src="https://datawrapper.dwcdn.net/rOz9i/full.png" style="width: 70%;"/><br>
+-->
+
+<h2> Objetivos </h2><br>
+El objetivo de este proyecto es mostrar las zonas más afectadas por la despoblación y aquellas que presentan una mayor pérdida de talento joven. Si bien no se profundiza en las causas, este conocimiento puede ser valioso para diferentes entidades, incluyendo negocios relacionados con el turismo, empresas que buscan contratar talento joven, instituciones gubernamentales y organizaciones sin fines de lucro que trabajan en el desarrollo y revitalización de zonas afectadas por la despoblación. Para ello, se plantean las siguientes cuestiones:<br>
+
+<ul style="text-align: center;">
+  <li><strong style="font-size: 20px;">¿Cuáles son las provincias que están perdiendo más población?</strong></li><br>
+  <li><strong style="font-size: 20px;">¿Cuáles son las provincias que están perdiendo más talento joven?</strong></li><br>
+  <li><strong style="font-size: 20px;">¿Cuáles son las ciudades que más están creciendo?, ¿Y cuáles las que más están decreciendo?</strong></li>
+</ul>
+
+
+<h2> Evolución de la población </h2><br>
+Se han descargado los datos del INE del número de ciudadanos empadronados en españa por provincias. Estos datos vienen clasificados en función a la edad y sexo de los ciudadanos. A partir de estos datos, se construyen mapas interactivos para observar la variación de la población total y joven en las diferentes provincias de España.<br><br>
+
+<!--
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<iframe title="Variación población por provincias" aria-label="Mapa" id="datawrapper-chart-xPST0" scrolling="no" frameborder="0" style="border: none;" width="10" height="0"></iframe>
+<img src="https://datawrapper.dwcdn.net/xPST0/full.png" style="width: 70%;"/><br>
+
+<br><br><br><br>
+-->
+
+<iframe title="Variación población por provincias" aria-label="Mapa" id="datawrapper-chart-xPST0" src="https://datawrapper.dwcdn.net/xPST0/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 40% !important; border: none;" height="520" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+</script><br><br>
+
+
+Al observar la distribución del crecimiento, se evidencia un problema social, ya que la mayoría de provincias están experimentando un decrecimiento poblacional. Las zonas rurales son las más afectadas, destacando las provincias del interior de Andalucía, Extremadura, Castilla y León, Galicia, Cantabria, Asturias, Valencia, Castilla y León y Castilla-la Mancha, siendo críticos los casos de Cuenca y Salamanca que han perdido más del 10% de su población total en tan solo 10 años.<br><br>
+
+Las provincias que más están creciendo en población son aquellas que destacan por su turismo de costa o por su industria. También se observan provincias cuya proximidad a otras con mayor industria hace que su población no se vea tan reducida. Destacan en crecimiento Baleares, superando el 5%, y Álava, Málaga, Almería, Madrid y Girona, cercanos al 4%.<br><br>
+
+Hay que tener en cuenta que la representación que se está haciendo es porcentual, es decir, que las ciudades cuya población sea mayor, pierden o ganan más población cuando se comparan con otras cuyo porcentaje sea el mismo pero presenten una menor población, agravándose el problema en las capitales cuya población es mayor. En Madrid, el crecimiento es del 4,03%, lo que equivale a un aumento de alrededor de 260.000 habitantes. En Barcelona, el crecimiento es del 3,36%, lo que representa un aumento de alrededor de 180.000 habitantes. Estas cifras contrastan significativamente con las del resto de las provincias, donde la mayoría de ellas están perdiendo población.<br><br>
+
+Es importante tener en cuenta que la mayoría de la población de las provincias se concentra en las grandes ciudades, lo que lleva a una alta densidad poblacional en estas áreas urbanas.<br>
+
+<!--<br><br><br><br>-->
+
+<iframe width="678" height="449" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXsYmmO_YxcRWrkXwkJXAfMy4V04vV9nBIpwEwno7yorSVlkTpy8e8J5CAEtdKUsC3mt4Nz4wV_aPA/pubchart?oid=1863058184&amp;format=interactive"></iframe>
+
+Si la densidad de población se hubiera representado por municipios en lugar de por provincias, se habría observado cómo en las zonas rurales la densidad es muy baja, y se podría apreciar con más claridad cómo la población se concentra en las zonas industriales y costeras. A pesar de que algunas provincias han experimentado un aumento en su población, la mayoría se ha concentrado en las grandes ciudades, y han seguido perdiendo población en las zonas rurales.<br><br>
+
+Es interesante analizar cuales han sido las ciudades con mayor crecimiento y decrecimiento para comprender mejor las causas. Para ello se estudia el crecimiento de las ciudades cuya población supera los 500000 habitantes.<br><br>
+
+Estos gráficos arrojan luz sobre lo que ya veníamos diciendo antes. Como se puede apreciar, los municios de Rivas, Pinto, San Sebastián de los Reyes, Valdemoro y Parla se encuentran cerca de Madrid, los precios desorbitados de la capital hacen que su población mude a los municipios colindantes. Sucede similar con Sant vicent del Raspeig en Alicante o Torrejón de Ardoz en Murcia. También destacan las zonas de turismo costero de Málaga: Fuengirola, Benalmádena, Mijas, Estepona y de las islas Canarias: Arrecife, Arona, Santa Lucia de Tirajana, y zonas de costas de otras provincias. En el caso de Melilla, el incremento se debe a la enorme cantidad de inmigrantes provinientes de África.<br><br>
+
+Las ciudades que pierden población en cambio, son en su mayoría de zonas rurales. Hay algunas excepciones que me gustaría compentar. En los casos de Benidorm y Torrevieja, el decrecimiento en la población tiene que ver con el turismo. En Benidorm debido al Brexit y tras la pandemia muchos extranjeros no renuevan empadronamiento, y en el caso de Torrevieja el decrecimiento tiene que ver con una regulación que se efectua debido a un gran número de turistas que no tienen acreditada su residencia en España. También es de reseñar el caso de Cádiz, el poco espacio construible que tiene la ciudad, hace que el precio de la vivencia sea desorbitado, haciendo que la población tienda a mudarse a pueblos colindantes.<br><br>
+
+
+<iframe width="750" height="463" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXsYmmO_YxcRWrkXwkJXAfMy4V04vV9nBIpwEwno7yorSVlkTpy8e8J5CAEtdKUsC3mt4Nz4wV_aPA/pubchart?oid=1282677524&amp;format=interactive"></iframe>
+
+<iframe width="750" height="468" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRXsYmmO_YxcRWrkXwkJXAfMy4V04vV9nBIpwEwno7yorSVlkTpy8e8J5CAEtdKUsC3mt4Nz4wV_aPA/pubchart?oid=653965026&amp;format=interactive"></iframe>
+
+
+<!--<br><br><br><br><br><br>-->
+
+<h2> Evolución de la juventud </h2><br>
+A continuación vamos a estudiar el número de jóvenes por provincia, con su respectiva variación. Téngase en cuenta que
+por jóvenes se está seleccionando al intervalo de población cuya edad se encuentra entre los 25 y 39 años, por las mismas razones que se han especificado antes.
+<style>
+.tabs {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+}
+.tab {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transform-origin: left;
+  outline: none; 
+}
+.tab.active {
+  background-color: #E8E8E8;
+  border-bottom: 1px solid #ccc;
+}
+.tab-content {
+  display: none;
+  padding: 10px;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #E8E8E8;
+  border: 1px solid #ccc;
+}
+.tab-content.active {
+  display: block;
+}
+
+</style>
+</head>
+<body>
+
+<div class="tabs">
+<div class="tab active" onclick="openTab(event, 'grafico1')">Porcentaje de juventud</div>
+<div class="tab" onclick="openTab(event, 'grafico2')">Reducción de jóvenes en 10 años</div>
+</div>
+
+<div class="tab-content active" id="grafico1">
+<iframe title="Porcentaje de jóvenes por provincias" aria-label="Map" id="datawrapper-chart-yckG2" src="https://datawrapper.dwcdn.net/yckG2/3/" scrolling="no" frameborder="0" style="width: 1000px; border: none;" height="519" data-external="1"></iframe>
+</div>
+
+<div class="tab-content" id="grafico2">
+<iframe title="Porcentaje reducción de jóvenes en 10 años" aria-label="Map" id="datawrapper-chart-DI2tT" src="https://datawrapper.dwcdn.net/DI2tT/2/" scrolling="no" frameborder="0" style="width: 1000px; border: none;" height="519" data-external="1"></iframe>
+</div>
+<script>
+  function openTab(evt, tabName) {
+    var i, tabContent, tabLinks;
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+      tabContent[i].style.display = "none";
+    }
+    tabLinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tabLinks.length; i++) {
+      tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script><br>
+
+
+Si observamos la proporción de jóvenes en el rango [25-39] años, se observa, que la proporción de este grupo es ligereamente inferior en el noreste de España, destacando Castilla la Mancha y Galicia. También se observa que la proporción de jóvenes es ligeramente mayor en el sur de España que en el resto. Este fenómeno se puede explicar por diferentes ópticas,  yo interpreto que se puede resumir en dos razones pricipales:<br><br>
+- Diferencias culturales: El clima cálido y soleado del sur de España propicia más las relaciones sociales, haciendo que la tasa de natalidad sea mayor, y con ello la proporción de jóvenes sea ligeramente superior.<br><br>
+- Industrialización: Conforme la zona presenta una mayor industrialización, mas oportunidades de negocio surgen, y con ello aumenta el número de personas en edad activa para la búsqueda de empleo. Este es el motivo por el cuál Madrid tienen una mayor propocion de jóvenes con respecto a las provincias colindantes. <br><br>
+
+Con estas ideas se puede entender muy bien por qué el noreste de España presenta la menor proporción de jóvenes. Se junta que el clima es mas frio (o lluvioso dependiendo de la zona), con que es una zona con una menor industrialización.<br><br>
+
+Si analizamos la disminución de la población juvenil en un lapso de 10 años, se puede constatar que ha decrecido en todas las provincias de España, tal y como se mencionó en la introducción. No obstante, se pueden identificar ahora las provincias más afectadas. A la tendencia generalizada del envejecimiento, se suma la inclinación de la población joven a abandonar las zonas rurales, donde se produce una mayor pérdida de talento joven. En efecto, se puede observar en los mapas que en estas regiones la población ya era mayor, lo que resulta en menos nacimientos. Además se da una considerable pérdida de juventud que emigra a otras zonas con mayores oportunidades laborales.<br><br>
+No obstante, en el gráfico se puede observar cómo también se está perdiendo población en las zonas de Castellón y Castilla-la Mancha, a pesar de que históricamente la proporción de jóvenes en estas áreas era ligeramente superior a las del noreste de España. <br><br>
+
+En líneas generales, se puede observar como existe una correlación entre este gráfico y el gráfico de variación de la población total.
+
+
+<h2> Conclusiones </h2><br>
+Las zonas urbanas que experimentan un mayor incremento poblacional son aquellas relacionadas con el turismo costero y las que están próximas a las grandes capitales en auge industrial. Además, la población joven en edad de trabajar tiende a emigrar a estas zonas abandonando las zonas rurales.<br><br>
+
+Una crítica que le hago a mi propio proyecto, es que tampoco se ha descubierto nada nuevo, el fenómeno de la despoblación y el envejecimiento de la población es algo que se conoce desde hace tiempo. No obstante, este proyecto a mi me ha parecido interesante a nivel personal, porque me ha permitido conocer cuales son las ciudades y provincias con más proyección que hay en España, este conocimiento puede ser útil de cara a la apertura de un negocio. <br><br>
+
+La idea inicial de este proyecto era representar la densidad de población y la variación no por provincias sino por municipios. Sucede que encontré esta tarea demasiado engorrosa, porque para poder hacerlo tenía que obtener las geocoordenadas de cada municipio y transformarlas al código que datawrapper utiliza para interpretar los muncipios. No obstante, hubiera sido más interesante haber podido hacer esto último. <br><br>
+
+También creo que le hubiese añadido valor al trabajo haber agregado la tasa de natalidad y el salario medio por provincias, incluyendo también otros marcadores para hacer un estudio más completo. <br>
+<br><br>
+
+<h3> Aspectos técnicos: </h3>
+<t>
+<strong>StackBlitz</strong> es una herramienta en línea que permite a los desarrolladores crear y compartir aplicaciones web. Ofrece un ambiente de desarrollo integrado (IDE) en la nube, lo que significa que no es necesario descargar ni instalar ningún software para empezar a programar. Además, StackBlitz incluye una serie de plantillas predefinidas que facilitan la creación de aplicaciones web, como Angular, React o Vue, entre otras.<br><br>
+
+<strong>Google SpreadSheet:</strong> es un programa de hoja de cálculo incluido como parte del paquete gratuito de editores de documentos de Google, basado en la web, que ofrece una serie de herramientas para visualizar y analizar datos. Permite trabajar de manera colaborativa en tiempo real, importar y exportar datos en múltiples formatos y generar gráficos personalizados. Además, se integra con otras herramientas de Google, como Google Drive y Google Docs, lo que facilita la organización y el intercambio de información.<br><br>
+
+<strong>Data Wrapper:</strong> es una plataforma en línea orientada a la edición de gráficas, que permite crear visualizaciones de datos atractivas y con metainformación relevante, a través de una interfaz fácil de usar. Ofrece la posibilidad de importar datos desde múltiples fuentes, como archivos CSV, hojas de cálculo de Google Sheets y bases de datos en línea, y cuenta con una amplia variedad de opciones de diseño y personalización para los gráficos.</t>
+
+<br><br><br>
